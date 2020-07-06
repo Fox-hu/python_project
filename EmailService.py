@@ -9,9 +9,9 @@ import smtplib
 import email
 
 # 邮箱、账户、发件人、收件人、抄送信息
-smtpService = 'smtp.163.com'
-userName = 'spring_boot@163.com'
-password = 'abc123455'
+smtpService = 'smtp.51job.com'
+userName = 'fox.hu@51job.com'
+password = 'light123##'
 target = 'youjia2062@163.com'
 cc = '308585610@qq.com'
 
@@ -34,7 +34,7 @@ att.add_header('Content-Disposition', 'attachment', filename=Header('test.xlsx',
 encoders.encode_base64(att)
 email.attach(att)
 
-smtp = smtplib.SMTP_SSL(smtpService, port=465)
+smtp = smtplib.SMTP_SSL(smtpService)
 smtp.login(userName, password)
 smtp.sendmail(userName, target, email.as_string())
 
