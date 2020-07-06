@@ -29,8 +29,8 @@ email['Cc'] = cc
 
 # 上传附件
 att = MIMEBase('application', 'octet-stream')
-att.set_payload(open('test.xlsx', 'rb').read())
-att.add_header('Content-Disposition', 'attachment', filename=Header('test.xlsx', 'utf-8').encode())
+att.set_payload(open('weekly report-胡佳(2020).xlsx', 'rb').read())
+att.add_header('Content-Disposition', 'attachment', filename=Header('weekly report-胡佳(2020).xlsx', 'utf-8').encode())
 encoders.encode_base64(att)
 email.attach(att)
 

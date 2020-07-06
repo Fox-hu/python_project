@@ -36,8 +36,8 @@ def Email(subject, body, to, cc=None):
         cc_recipients=[Mailbox(email_address=cc)]
     )
     # 附件加"rb"
-    cont = open('test.xlsx', 'rb').read()
-    attach = FileAttachment(name='test.xlsx', content=cont)
+    cont = open('weekly report-胡佳(2020).xlsx', 'rb').read()
+    attach = FileAttachment(name='weekly report-胡佳(2020).xlsx', content=cont)
     m.attach(attach)
     m.send_and_save()
 
@@ -76,4 +76,4 @@ data = ExcelService.getExcelData(54, 56)
 content = createContent(data)
 pprint.pprint(content)
 subject = "Developing status report (" + data["start"] + "-" + "" + data["end"] + ")"
-Email(subject, content, "youjia2062@163.com", "308586510@qq.com")
+Email(subject, content, "francis.fan@51job.com", "youjia2062@163.com")
