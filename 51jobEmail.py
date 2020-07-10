@@ -11,6 +11,9 @@ excelName = 'weekly report-胡佳(2020).xlsx'
 mailName = '51job.com\\fox.hu'
 mailPassword = ''
 mailAddress = 'fox.hu@51job.com'
+to = 'francis.fan@51job.com'
+cc = 'appdev@51job.com'
+
 # 看能不能把这两个参数去掉 起始行号 末尾行号
 startRow = 54
 endRow = 56
@@ -115,4 +118,4 @@ data = getExcelData()
 content = createContent(data)
 pprint.pprint(content)
 subject = "Developing status report (" + data["start"] + "-" + "" + data["end"] + ")"
-Email(subject, content, "francis.fan@51job.com", "appdev@51job.com")
+Email(subject, content, to, cc)
