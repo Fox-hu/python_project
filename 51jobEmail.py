@@ -7,16 +7,16 @@ from datetime import timedelta
 import openpyxl
 import pprint
 
-excelName = 'weekly report-胡佳(2020).xlsx'
+excelName = 'weekly report-胡佳(2021).xlsx'
 mailName = '51job.com\\fox.hu'
-mailPassword = ''
+mailPassword = 'light123!!'
 mailAddress = 'fox.hu@51job.com'
 to = 'francis.fan@51job.com'
 cc = 'appdev@51job.com'
 
 # 看能不能把这两个参数去掉 起始行号 末尾行号
-startRow = 54
-endRow = 56
+startRow = 3
+endRow = 5
 
 urllib3.disable_warnings()  # 取消SSL安全连接警告
 BaseProtocol.HTTP_ADAPTER_CLS = NoVerifyHTTPAdapter
@@ -96,9 +96,9 @@ def createContent(data):
 A.	Finished job description(${lastMon}-${lastFri})
 ${version}:
 ${event}
-The description of problems
-B.	The suggestions
-C.	Planning for this week (${thisMon}-${thisFri})
+B.  The description of problems
+C.	The suggestions
+D.	Planning for this week (${thisMon}-${thisFri})
 ${todo}
 """)
 
@@ -118,4 +118,5 @@ data = getExcelData()
 content = createContent(data)
 pprint.pprint(content)
 subject = "Developing status report (" + data["start"] + "-" + "" + data["end"] + ")"
+pprint.pprint(subject)
 Email(subject, content, to, cc)
